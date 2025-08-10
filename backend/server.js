@@ -12,10 +12,9 @@ Model.knex(knex);
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:5173','https://job-admin-panel.netlify.app/'],
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
-  allowedHeaders:["Content-Type"]
+  credentials: false
 }));
 
 
