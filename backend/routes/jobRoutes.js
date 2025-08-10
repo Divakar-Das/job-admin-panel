@@ -8,7 +8,8 @@ router.get('/', async (req, res) => {
     const jobs = await Job.query();
     res.json(jobs);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch jobs' });
+    console.error('Error fetching jobs:', err);  // Log full error details
+    res.status(500).json({ error: 'Failed to fetch jobs', details: err.message });
   }
 });
 
