@@ -83,11 +83,11 @@ const JobForm = ({ handleClose, refreshJobs, jobData, onJobAdded, onJobUpdated }
 
             if (jobData && jobData.id) {
                 // Edit mode
-                await axios.put(`http://localhost:5000/api/jobs/${jobData.id}`, data);
+                await axios.put(`https://job-portal-api-wcpm.onrender.com/api/jobs/${jobData.id}`, data);
                 onJobUpdated();
             } else {
                 // Create mode
-                await axios.post("http://localhost:5000/api/jobs", data);
+                await axios.post("https://job-portal-api-wcpm.onrender.com/api/jobs", data);
                 onJobAdded();
             }
 

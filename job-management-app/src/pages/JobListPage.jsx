@@ -65,7 +65,7 @@ const JobListPage = () => {
     };
 
     const fetchJobs = () => {
-        axios.get('http://localhost:5000/api/jobs')
+        axios.get('https://job-portal-api-wcpm.onrender.com/api/jobs')
             .then((res) => {
                 setJobs(res.data);
             })
@@ -74,7 +74,7 @@ const JobListPage = () => {
 
     const deleteJob = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/jobs/${id}`);
+            await axios.delete(`https://job-portal-api-wcpm.onrender.com/api/jobs/${id}`);
             fetchJobs();
             setSnackbar({
                 open: true,
