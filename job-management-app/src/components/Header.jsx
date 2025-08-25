@@ -70,7 +70,6 @@ const Header = ({ handleOpen, filters, onFilterChange }) => {
         { label: "Find Jobs", href: "#" },
         { label: "Find Talents", href: "#" },
         { label: "About us", href: "#" },
-        { label: "Testimonials", href: "#" },
     ];
 
     const drawer = (
@@ -94,7 +93,7 @@ const Header = ({ handleOpen, filters, onFilterChange }) => {
             {/* Responsive AppBar */}
             <AppBar position="static"
                 sx={{
-                    backgroundColor: "white", borderBottom: "2px solid #ff7e5f", boxShadow: "none"
+                    backgroundColor: "white", borderBottom: "2px solid #00000054", boxShadow: "none"
                 }}>
                 <Toolbar sx={{
                     justifyContent: "space-between",
@@ -103,6 +102,7 @@ const Header = ({ handleOpen, filters, onFilterChange }) => {
                     {/* Left Logo */}
                     <Box sx={{ display: "flex", alignItems: "center" }}>
                         <img src={logo} alt="logo" style={{ height: 50 }} />
+                        {!isMobile && <h2 style={{ color: "#ff7e5f", fontFamily: "inherit", fontVariant: "small-caps" }} >Job Application</h2>}
                     </Box>
 
                     {

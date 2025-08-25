@@ -17,7 +17,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 
-
+import CircularProgress from '@mui/material/CircularProgress';
 
 const style = {
     position: 'absolute',
@@ -50,6 +50,7 @@ const JobListPage = () => {
 
 
     const [jobs, setJobs] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [open, setOpen] = useState(false);
     const [selectedJob, setSelectedJob] = useState(null);
 
@@ -65,11 +66,16 @@ const JobListPage = () => {
     };
 
     const fetchJobs = () => {
+        setLoading(true);
         axios.get('https://job-portal-api-wcpm.onrender.com/api/jobs')
             .then((res) => {
                 setJobs(res.data);
+                setLoading(false);
             })
-            .catch((err) => console.error(err));
+            .catch((err) => {
+                console.error(err);
+                setLoading(false);
+            });
     };
 
     const deleteJob = async (id) => {
@@ -134,6 +140,23 @@ const JobListPage = () => {
 
         return matchesSearch && matchesLocation && matchesJobType && matchesSalary;
     });
+
+
+    if (loading) {
+        return (
+            <Box
+                sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100vh"
+                }}
+            >
+                <CircularProgress size={40} thickness={4} />
+            </Box>
+        );
+    }
+
 
     return (
         <>

@@ -67,7 +67,7 @@ li a:hover {
 }
 
 .create-btn {
-background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
     width: 123px;
     height: 38px;
     border-radius: 30px;

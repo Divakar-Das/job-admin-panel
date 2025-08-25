@@ -89,7 +89,7 @@ label {
     color: white;
     border: none;
     margin-right: 40px;
-    background-color: #1c9cce;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
 }
 
 
@@ -208,7 +208,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         font-size: 16px;
     }
 
-    .input-content{
+    .input-content {
         width: 300px;
     }
 
@@ -253,10 +253,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     .calender-image-icon {
         position: relative;
         right: -270px;
-        top:-30px;
+        top: -30px;
     }
 
-    .job-description{
+    .job-description {
         padding: 15px 0;
     }
 }
